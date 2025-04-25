@@ -1,0 +1,48 @@
+/* Additional custom styles */
+.filter-section {
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.filter-section.collapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
+.filter-section.expanded {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.checkbox-container input:checked + .checkbox-label {
+  @apply bg-blue-50 border-blue-500;
+}
+
+.radio-container input:checked + .radio-label {
+  @apply bg-blue-50 border-blue-500;
+}
+
+.doctor-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.doctor-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Animation for suggestions dropdown */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.suggestions-dropdown {
+  animation: slideDown 0.2s ease-out forwards;
+}
