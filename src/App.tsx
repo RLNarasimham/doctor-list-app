@@ -63,6 +63,12 @@ function App() {
     updateSearchParams('consultation', type);
   };
   
+  const handleClearSpecialties = () => {
+    specialties.forEach(specialty => {
+      handleSpecialtyChange(specialty, false);
+    });
+  };  
+
   // Handle specialty filter
   const handleSpecialtyChange = (specialty: string, checked: boolean) => {
     const currentSpecialties = [...specialties];
@@ -129,6 +135,7 @@ function App() {
               selectedSort={sortBy}
               onConsultationChange={handleConsultationChange}
               onSpecialtyChange={handleSpecialtyChange}
+              onClearSpecialties={handleClearSpecialties}
               onSortChange={handleSort}
             />
           </aside>
